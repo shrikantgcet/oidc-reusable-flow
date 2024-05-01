@@ -1,17 +1,15 @@
-name: oidc-azure
+ name: oidc-azure
   
-on:
-  workflows_call:
-
-permissions:
-      id-token: write
-      contents: read
+  on:
+    workflow_dispatch
+    
+  permissions:
+        id-token: write
+        contents: read
   jobs: 
     build-and-deploy:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout repo
-          uses: actions/checkout@v4
         - name: 'Az CLI login'
           uses: azure/login@v1
           with:
