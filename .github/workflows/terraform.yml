@@ -27,7 +27,6 @@ jobs:
       resource_group_name: ${{ steps.apply.outputs.resource_group_name }}
       function_name: ${{ steps.apply.outputs.function_name }}
     steps:
-    - uses: actions/checkout@v3
     - name: Log in to Azure using OIDC
       uses: ./.github/workflows/oidc-azure.yml
               
