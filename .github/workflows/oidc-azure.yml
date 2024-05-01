@@ -1,17 +1,7 @@
-# https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure
-  name: oidc-azure
+name: oidc-azure
   
-  on:
-    workflow_call:
-    # push:
-    #   branches: none # [ main ]
-    #   paths:
-    #   - '.github/workflows/090-oidc-azure.yml'
-    # pull_request:
-    #   branches: none # [ main ]
-      
-    # # Allows you to run this workflow manually from the Actions tab
-    # workflow_dispatch:
+on:
+  workflows_call:
     
   permissions:
         id-token: write
