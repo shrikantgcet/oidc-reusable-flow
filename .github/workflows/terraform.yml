@@ -10,8 +10,7 @@ env:
   BACKEND_STORAGE_CONTAINER_NAME: ${{ vars.BACKEND_STORAGE_CONTAINER_NAME }}
 
 jobs:
-  getToken:
-    uses: ./.github/workflows/oidc-azure.yml
+
   
   TerraformCode:
     runs-on: ubuntu-latest
@@ -23,6 +22,8 @@ jobs:
       with:
         terraform_version: 1.5.5
         terraform_wrapper: false
+  getToken:
+    uses: ./.github/workflows/oidc-azure.yml
 
     - name: Terraform Init
       id: init
@@ -34,4 +35,3 @@ jobs:
           -backend-config="key=$TF_BACKEND_KEY"
         echo 'Terraform Init completed successfully'
       working-directory: ${{ env.TERRAFORM_WORKING_DIRECTORY }}
-      uses: ./.github/workflows/oidc-azure.yml
