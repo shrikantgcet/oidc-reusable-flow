@@ -7,3 +7,11 @@ on:
 jobs:
   deploy:
     uses: ./.github/workflows/oidc-azure.yml
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.5.5
+        terraform_wrapper: false
