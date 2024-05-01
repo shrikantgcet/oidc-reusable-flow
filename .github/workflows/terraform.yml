@@ -13,6 +13,7 @@ jobs:
 
   getToken:
     uses: ./.github/workflows/oidc-azure.yml
+    secrets: inherit
 
   TerraformCode:
     runs-on: ubuntu-latest
@@ -34,4 +35,3 @@ jobs:
           -backend-config="key=$TF_BACKEND_KEY"
         echo 'Terraform Init completed successfully'
       working-directory: ${{ env.TERRAFORM_WORKING_DIRECTORY }}
-      uses: ./.github/workflows/oidc-azure.yml
