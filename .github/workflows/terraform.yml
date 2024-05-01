@@ -24,7 +24,7 @@ jobs:
         terraform_wrapper: false
   getToken:
     uses: ./.github/workflows/oidc-azure.yml
-
+    
     - name: Terraform Init
       id: init
       run: |
@@ -35,3 +35,4 @@ jobs:
           -backend-config="key=$TF_BACKEND_KEY"
         echo 'Terraform Init completed successfully'
       working-directory: ${{ env.TERRAFORM_WORKING_DIRECTORY }}
+      uses: ./.github/workflows/oidc-azure.yml
