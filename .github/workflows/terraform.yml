@@ -10,6 +10,7 @@ jobs:
   
   TerraformCode:
     runs-on: ubuntu-latest
+    needs: getToken
     steps:
     - uses: actions/checkout@v4
     - name: Setup Terraform
