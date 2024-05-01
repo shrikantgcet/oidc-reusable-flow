@@ -29,9 +29,9 @@ jobs:
     steps:
     - name: 'Checkout code'
       uses: actions/checkout@main
-      
+
     - name: Log in to Azure using OIDC
-      uses: ./.github/workflows/oidc-azure.yml
+      uses: shrikantgcet/oidc-reusable-flow/.github/workflows/oidc-azure.yml
               
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
