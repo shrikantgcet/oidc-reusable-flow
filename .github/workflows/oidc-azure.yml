@@ -1,4 +1,4 @@
- name: oidc-azure
+  name: oidc-azure
   
   on:
     workflow_dispatch
