@@ -16,7 +16,7 @@
             client-id: '80b2dba5-2e26-4665-91e0-519cc3acf212'
             tenant-id: '1b8b93e0-fc23-441e-ab35-a908300672d3'
             subscription-id: '3cbe84f6-78b3-4b7a-97e4-e47fcf9e3d6b'
-      
+            enable-AzPSSession: true
         - name: 'Run az commands'
           run: |
             az account show
